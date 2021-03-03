@@ -1,0 +1,4 @@
+
+
+test_mycrypt.py:65: AssertionError
+asset (0.95 * 0.026935099999999) < 8.0899999999999486e-05
