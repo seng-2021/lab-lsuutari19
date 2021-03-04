@@ -1,4 +1,24 @@
+==========----------- coverage: platform win32, python 3.7.4-final-0 -----------
+Name                  Stmts   Miss  Cover   Missing
+---------------------------------------------------
+mycrypt.py               19      2    89%   5, 10
+mycryptCopy.py           21     21     0%   1-25
+test_mycrypt.py          18      2    89%   48-49
+test_mycryptCopy.py      18      2    89%   48-49
+---------------------------------------------------
+TOTAL                    76     27    64%
 
-
-test_mycrypt.py:65: AssertionError
-asset (0.95 * 0.026935099999999) < 8.0899999999999486e-05
+================================================== short test summary info ==================================================
+FAILED test_mycrypt.py::test_encode_decode[123] - assert '!"#' == '123'
+FAILED test_mycrypt.py::test_encode_decode[!"#] - assert '123' == '!"#'
+FAILED test_mycrypt.py::test_encode_decode[abc] - AssertionError: assert 'NOP' == 'abc'
+FAILED test_mycrypt.py::test_invalid_char[+] - Failed: DID NOT RAISE <class 'ValueError'>
+FAILED test_mycrypt.py::test_invalid_char[\xe5\xe4\xf6] - Failed: DID NOT RAISE <class 'ValueError'>
+FAILED test_mycrypt.py::test_timing - assert (0.95 * 0.05207379999999995) < 0.00013070000000003912
+FAILED test_mycryptCopy.py::test_encode_decode[123] - assert '!"#' == '123'
+FAILED test_mycryptCopy.py::test_encode_decode[!"#] - assert '123' == '!"#'
+FAILED test_mycryptCopy.py::test_encode_decode[abc] - AssertionError: assert 'NOP' == 'abc'
+FAILED test_mycryptCopy.py::test_invalid_char[+] - Failed: DID NOT RAISE <class 'ValueError'>
+FAILED test_mycryptCopy.py::test_invalid_char[\xe5\xe4\xf6] - Failed: DID NOT RAISE <class 'ValueError'>
+FAILED test_mycryptCopy.py::test_timing - assert (0.95 * 0.04828429999999995) < 0.00013079999999998648
+========================================= 12 failed, 10 passed, 2 skipped in 0.69s ==========================================
