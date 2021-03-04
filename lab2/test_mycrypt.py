@@ -41,8 +41,14 @@ def test_invalid_char(invalid_input):
     with pytest.raises(ValueError):
         mycrypt.encode(invalid_input)
 
+@pytest.mark.parametrize("invalid_input", ['a'*1696, 'b'*31000])
+def test_invalid_char2(invalid_input):
+    '''Testing that too long inputs wont make it'''
+    with pytest.raises(ValueError):
+        mycrypt.encode(invalid_input)
 
-@pytest.mark.parametrize("invalid_input", [])
+
+@pytest.mark.parametrize("invalid_input", [7897878, 5556, 1.696, 1*2500])
 def test_invalid_types(invalid_input):
     '''Invalid parameter types should raise TypeError'''
     with pytest.raises(TypeError):
@@ -58,6 +64,7 @@ def test_timing():
 
     Hint: pad your string to max length and only return wanted length
     '''
+
     timing1 = min(timeit.repeat('mycrypt.encode("a")',
                                 'import mycrypt', repeat=3, number=30))
     timing2 = min(timeit.repeat('mycrypt.encode("a"*1000)',
